@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CukCuk</title>
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/layout/header.css">
+    <link rel="stylesheet" href="css/common/dialog.css">
+    <link rel="stylesheet" href="css/manage/staff/admin_staff_page.css">
+    <link rel="stylesheet" href="css/layout/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/manage/staff/admin_add_staff.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/layout/footer.css" />
+
+</head>
+
+<body>
+    <div class="flex-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="flex-container sidebar-top">
+                <img src="assets/img/toggle.png" width="32" height="32" />
+                <img class="logo" src="assets/img/cukcuk-logo.png" width=120 height=32 />
+            </div>
+            <div class="menu">
+                <div class="flex-container menu-item">
+                    <img src="assets/icon/dashboard.png" width="28" height="28" />
+                    <p class="text-item">Tổng quan</p>
+                </div>
+                <div class="flex-container menu-item">
+                    <img src="assets/icon/report.png" width="28" height="28" />
+                    <p class="text-item">Báo cáo</p>
+                </div>
+                <div class="flex-container menu-item">
+                    <img src="assets/icon/dashboard.png" width="28" height="28" />
+                    <p class="text-item">Mua hàng</p>
+                </div>
+                <div class="flex-container menu-item">
+                    <img src="assets/icon/dic-employee.png" width="28" height="28" />
+                    <p class="text-item">Danh mục nhân viên</p>
+                </div>
+                <div class="flex-container menu-item">
+                    <img src="assets/icon/setting.png" width="28" height="28" />
+                    <p class="text-item">Thiết lập hệ thống</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Main -->
+        <div class="main_page">
+            <div class="header flex-container">
+                <select class="select-restaurantName">
+                    <option> Nhà hàng Biển đông</option>
+                    <option> Nhà hàng Biển tây</option>
+                </select>
+                <div class="header-userInfo">
+                    <img id="default_avatar" src="assets/icon/avatar-default.png" width="40px" height="40px" />
+                    <p>Nguyễn Văn Mạnh</p>
+                    <input class="header-buttonSetting" type="button">
+                </div>
+            </div>
+            <div class="flex-container first-row">
+                <p style="font-size:18px; font-weight: bold;"><b>Danh sách nhân viên</b></p>
+                <!-- <button class="btn-addStaff" type="button">Thêm nhân viên</button> -->
+                <button class="btn-addStaff" id="btnAddStaff"><i class="fa fa-user-plus"></i> Thêm nhân viên</button>
+            </div>
+            <div class="flex-container filter-row">
+                <input class="searchStaff" type="text" placeholder="Tìm kiếm theo Mã, Tên hoặc Số điện thoại">
+                <select class="searchDepartment">
+                    <option value="all">Tất cả phòng ban</option>
+                    <option value="depart_1">Phòng ban 1</option>
+                    <option value="depart_2">Phòng ban 2</option>
+                    <option value="depart_3">Phòng ban 3</option>
+                </select>
+                <select class="searchPosition">
+                    <option value="all">Tất cả vị trí</option>
+                    <option value="position_1">Vị trí 1</option>
+                    <option value="position_2">Vị trí 2</option>
+                    <option value="position_3">Vị trí 3</option>
+                </select>
+                <button class="header-buttonRefresh" id="btnRefresh" type="button"></button>
+            </div>
+            <!-- Staff information table -->
+            <div class="allStaff">
+                <table class="staff_table">
+                    <thead>
+                        <tr>
+                            <th fieldName="EmployeeCode">Mã nhân viên</th>
+                            <th fieldName="FullName">Họ và tên</th>
+                            <th fieldName="Gender">Giới tính</th>
+                            <th fieldName="DateOfBirth" formatType="ddmmyyyy">Ngày sinh</th>
+                            <th fieldName="PhoneNumber">Điện thoại</th>
+                            <th fieldName="Email">Email</th>
+                            <th fieldName="PositionName">Chức vụ</th>
+                            <th fieldName="DepartmentName">Phòng ban</th>
+                            <th fieldName="Salary" formatType="moneyVND">Mức lương cơ bản</th>
+                            <th fieldName="WorkStateName">Tình trạng công việc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <footer>
+                <div class="flex-container footer">
+                    <div>
+                        <p>Hiển thị 1-10/1000 nhân viên</p>
+                    </div>
+                    <div class="choosePage">
+                        <button class="directionPage footer-buttonFirstPage" type="button"></button>
+                        <button class="directionPage footer-buttonPrePage" type="button"></button>
+                        <button class="btn_page" type="button">1</button>
+                        <button class="btn_page" type="button">2</button>
+                        <button class="btn_page" type="button">3</button>
+                        <button class="btn_page" type="button">4</button>
+                        <button class="directionPage footer-buttonNextPage" type="button"></button>
+                        <button class="directionPage footer-buttonLastPage" type="button"></button>
+                    </div>
+                    <div>
+                        <p>10 nhân viên/trang</p>
+                    </div>
+                </div>
+            </footer>
+            <div class="m-dialog"> 
+                <div class="dialog-modal mainForm">
+                    <div class='addStaffHeader'>
+                        <div class="titlePage">
+                            <p>THÔNG TIN NHÂN VIÊN</p>
+                          </div>
+                    </div>
+                    <div class='addStaffContent'>
+                        
+                          <div class="flex-container">
+                            <div class="avatar">
+                              <img src="assets/img/default-avatar.jpg" />
+                              <p>(Vui lòng chọn ảnh có định dạng</p>
+                              <p>.jpg, .jpeg, .png, .gif)</p>
+                            </div>
+                            <div class="info">
+                              <div class=typeInfo>
+                                <p>A. THÔNG TIN CHUNG:</p>
+                                <hr>
+                              </div>
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Mã nhân viên (<span class='redStar'>*</span>)</p>
+                                  <input id="txtId" name="id" class="txtInputRequire" fieldName='ID' type="text"/>
+                                </div>
+                                <div>
+                                  <p>Họ và tên (<span class='redStar'>*</span>)</p>
+                                  <input id="txtFullname" name="fullname" class="txtInputRequire" fieldName='Fullname' type="text"/>
+                                </div>
+                              </div>
+                      
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Ngày sinh</p>
+                                  <input id="birthday" name="birthday" fieldName='Birthday' type="date"/>
+                                </div>
+                                <div>
+                                  <p>Giới tính</p>
+                                  <select fieldName='Gender'>
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                  </select>
+                                </div>
+                              </div>
+                      
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Số CMTND/Căn cước (<span class='redStar'>*</span>)</p>
+                                  <input id="txtIdCard" name="id_card" fieldName='IdCard' class="txtInputRequire" type="text"/>
+                                </div>
+                                <div>
+                                  <p>Ngày cấp</p>
+                                  <input id="datetime_id_card" fieldName='DatetimeIdCard' name="datetime_id_card" type="date"/>
+                                </div>
+                              </div>
+                      
+                              <div class="flex-container">
+                                <div class="first_column">
+                                  <p>Nơi cấp</p>
+                                  <input id="id_card_address" name="id_card_address" fieldName='IdCardAddress' type="text"/>
+                                </div>
+                              </div>
+                      
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Email (<span class='redStar'>*</span>)</p>
+                                  <input id="txtEmail" name="email" fieldName='Email' class="txtInputRequire" type="email"/>
+                                </div>
+                                <div>
+                                  <p>Số điện thoại (<span class='redStar'>*</span>)</p>
+                                  <input id="txtPhone" name="phone" fieldName='Phone' class="txtInputRequire" type="text"/>
+                                </div>
+                              </div>
+                      
+                              <div class=typeInfo>
+                                <p>B. THÔNG TIN CÔNG VIỆC</p>
+                                <hr>
+                              </div>
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Vị trí</p>
+                                  <select>
+                                    <option>Giám đốc</option>
+                                    <option>Nhân viên</option>
+                                  </select>
+                                </div>
+                                <div>
+                                  <p>Phòng ban</p>
+                                  <select>
+                                    <option>Phòng nhân sự</option>
+                                    <option>Phòng hành chính</option>
+                                  </select>
+                                </div>
+                              </div>
+                      
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Mã số thuế cá nhân</p>
+                                  <input id="tax_number" fieldName='TaxNumber' name="tax_number" type="text"/>
+                                </div>
+                      
+                                <div>
+                                  <p>Mức lương cơ bản</p>
+                                  <input id="base_salary" fieldName='BaseSalary' name="base_salary" type="text"/>
+                                </div>
+                              </div>
+                      
+                              <div class="flex-container">
+                                <div class="firstColumn">
+                                  <p>Ngày gia nhập công ty</p>
+                                  <input id="datetime_join" fieldName='DatetimeJoin' name="datetime_join" type="date"/>
+                                </div>
+                                <div>
+                                  <p>Tình trạng công việc</p>
+                                  <select id='selectWorkStatus'></select>
+                                </div>
+                      
+                      
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                    
+                    <div class="addStaffFooter">
+                      <div class="flex-container footerAction">
+                        <button class="btnCancel" id="btnCancel">Hủy</button>
+                        <button class="btnSave" id="btnSave"><i class="fa fa-save"></i> Lưu</button>
+                        <!-- <button class="btnSaveCustom"><img src="assets/icon/btn-firstpage.svg" alt="Girl in a jacket" width="15" height="15"> Lưu</button> -->
+                      </div>
+                
+                    </div>
+                  </div>
+        
+            </div>
+        </div>
+
+        
+    </div>
+    <div class='loading'>
+      <div class=loading-modal></div>
+      <div class=loading-icon></div>
+    </div>
+    
+
+    <script src="js/lib/jquery-3.6.0.min.js"></script>
+    <script src="js/common/common.js"></script>
+    <script src="js/common/base.js"></script>
+    <script src="js/page/staff.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.13.0-rc.3/jquery-ui.js"
+  integrity="sha256-tYLuvehjddL4JcVWw1wRMB0oPSz7fKEpdZrIWf3rWNA="
+  crossorigin="anonymous"></script>
+
+</body>
+
+</html>

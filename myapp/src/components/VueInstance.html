@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app1">
+      <h1>{{msg}}</h1>
+      <p ref="test_ref1">Ref1</p>
+      <p ref="test_ref2">Ref2</p>
+      <button @click="showRef">Click to test ref</button>
+      <!-- Có 2 cách gọi tên component (lạc đà hoặc gạch ngang) --> 
+      <my-component></my-component>
+      <my-component></my-component>
+      <my-component></my-component>
+      <my-component></my-component>
+      <my-component></my-component>
+
+      
+    </div>
+
+    <div id="app2">
+      <h1>{{msg}}</h1>
+    </div>
+
+    <script>
+      var dt = {
+        counter: 0,
+      };
+      var localComponent = {
+        template: '<h1> Local component </h1>'
+      }
+
+      Vue.component("myComponent", {
+        template:
+          '<div><button @click="counter ++"> Đã click {{counter}} lần </button> <hr> <localComponent></localComponent></div>',
+        data: function () {
+          return dt;
+        },
+        
+        components: {
+          'localComponent': localComponent
+        }
+        // methods: {
+        //     updateCounter(){
+        //         this.counter += 1;
+        //     }
+        // }
+      });
+
+      var dataObjOutside = {
+        message: "Hello every one",
+      };
+
+      var vm1 = new Vue({
+        el: "#app1",
+        data: {
+          msg: "Hello every one",
+        },
+        methods: {
+          showRef() {
+            console.log(this.$refs);
+          },
+        },
+        components: {
+          'localComponent': localComponent
+        }
+      });
+
+      var vm2 = new Vue({
+        el: "#app2",
+        data: {
+          msg: "message2",
+        },
+        methods: {},
+      });
+
+      console.log(dataObjOutside.message === vm1.$data.msg);
+      setTimeout(function () {
+        vm1.msg = "Changed by timer";
+      }, 2000);
+
+      //   Bình thường khai báo template trước, sau đó chạy đến script để el name có thể map với template bên trên, nếu không sẽ bị error template không tồn tại.
+      // Để có thể khai báo template sau, có thể dùng $mount trong vue instance.
+      // Nếu selector là class thì vue instance chỉ ăn theo template đầu tiên có class đó.
+      vm1.$mount("#app1"); // #app1-id, .app1-class
+    </script>
+  </body>
+</html>

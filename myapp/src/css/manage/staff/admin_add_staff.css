@@ -1,0 +1,108 @@
+.mainForm{    
+    height: 600px;
+    width: 812px;
+    border: 1px solid rgb(211, 208, 208);
+    margin-top: 20px;
+    margin-left: 25%;
+    border-radius: 5px;
+}
+
+.mainForm .addStaffContent{    
+    overflow: auto;
+    height: 447px;
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+.titlePage{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.avatar {
+    width: 160px;
+    text-align: center;
+    margin-right: 16px;
+    margin-left: 20px;
+    justify-content: center;
+}
+
+.avatar img {
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    border: 1px solid rgb(211, 211, 211);
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.avatar p {
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+input {
+    width: 260px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid rgb(211, 211, 211);
+    padding-left: 20px;
+}
+
+input[type="date"] {
+    width: 240px;
+    padding-right: 20px;
+}
+
+select {
+    width: 282px;
+    height: 42px;
+    border-radius: 5px;
+    border: 1px solid rgb(211, 211, 211);
+    padding-left: 20px;
+}
+
+
+.redStar {
+    color: red;
+}
+
+.firstColumn {
+    width: 50%;
+    margin-right: 8px;
+}
+
+.titlePage{
+    font-size: 20px;
+}
+
+.addStaffFooter {
+    height: 60px;
+    background-color: rgb(233, 235, 238);
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footerAction {
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.typeInfo{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+hr {
+    margin: 0;
+    border: 3px solid green;
+    border-radius: 1px;
+    width: 76px;
+}

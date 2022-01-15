@@ -1,0 +1,25 @@
+
+.header {
+    height: 52px;
+    border-bottom: 1px solid rgb(233, 224, 224);
+    align-items: center;
+}
+
+.header-userInfo {
+    display: flex;
+    position: absolute;
+    right: 0;
+    align-items: center;
+}
+
+.header-buttonSetting {
+    margin-left: 10px;
+    background: url(../../assets/icon/option.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    border: 0 solid rgb(189, 182, 182);
+    cursor: pointer;
+    margin-right: 12px;
+}
+

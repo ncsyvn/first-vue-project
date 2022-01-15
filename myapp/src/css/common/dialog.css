@@ -1,0 +1,27 @@
+.m-dialog {
+    position: relative;
+}
+
+.dialog-modal {
+    /* opacity: .5; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+}
+
+.dialog-content {
+    position: absolute;
+    height: 600px;
+    width: 788px;
+    border: 1px solid rgb(211, 208, 208);
+    margin-top: 20px;
+    margin-left: 25%;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 1001;
+    
+}

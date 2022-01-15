@@ -1,0 +1,33 @@
+.btnSave{
+    margin-left: 10px;
+    /* background: url(../../../assets/icon/add_staff.png) no-repeat center center; */
+    width: 80px;
+    height: 40px;
+    background-size: cover;
+    border: 0 solid rgb(189, 182, 182);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 12px;
+    background-color: rgb(1, 145, 96);
+    color: white;
+}
+
+.btnSave:hover{
+    background-color: rgb(16 205 141);
+}
+
+.btnCancel{
+    width: 80px;
+    height: 40px;
+    font-weight: bold;
+    margin-right: 12px;
+    cursor: pointer;
+    border: 0;
+    background-color: rgb(233, 235, 238);
+
+}
+
+.btnCancel:hover{
+    background-color: rgb(163, 156, 156);
+    border-radius: 5px;
+}

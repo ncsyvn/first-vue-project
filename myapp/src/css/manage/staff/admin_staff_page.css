@@ -1,0 +1,189 @@
+.main_page {
+    border-color: aqua;
+    width: 100%;
+    border-left: 1px solid rgb(233, 224, 224);
+}
+
+::placeholder {
+    color: rgb(189, 182, 182);
+    font-size: 10px;
+    text-align: left;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.btn_page {
+    border-radius: 50%;
+    margin-left: 8px;
+    border: 1px solid rgb(226, 226, 226);
+}
+
+.btn_page:hover {
+    background-color: rgb(16 205 141);
+    color:rgb(226, 226, 226);
+    border-color: seagreen;
+}
+
+#default_avatar {
+    margin-right: 10px;
+}
+
+.staff_table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* tbody{
+    height: 200px;
+} */
+
+.staff_table th, td {
+    text-align: left;
+    padding: 8px;
+    font-weight: normal;
+}
+
+.staff_table th {
+    font-weight: bold;
+}
+
+.staff_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+    border-top: 1px solid rgb(233, 224, 224);
+    border-bottom: 1px solid rgb(233, 224, 224);
+
+}
+
+.first-row {
+    margin-left: 12px;
+    margin-top: 16px;
+}
+
+.filter-row {
+    margin-left: 12px;
+}
+
+.btn-addStaff {
+    margin-left: 10px;
+    /* background: url(../../../assets/icon/add_staff.png) no-repeat center center; */
+    width: 140px;
+    height: 40px;
+    background-size: cover;
+    border: 0 solid rgb(189, 182, 182);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 12px;
+    position: absolute;
+    right: 0;
+    background-color: rgb(1, 145, 96);
+    color: white;
+}
+
+.btn-addStaff:hover{
+    background-color: rgb(16 205 141);
+}
+
+
+.select-restaurantName {
+    border: 0;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.searchStaff {
+    border: 1px solid rgb(189, 182, 182);
+    width: 280px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+.searchDepartment {
+    border: 1px solid rgb(189, 182, 182);
+    width: 160px;
+    height: 36px;
+    margin-left: 8px;
+    border-radius: 5px;
+}
+
+.searchPosition {
+    border: 1px solid rgb(189, 182, 182);
+    width: 160px;
+    height: 36px;
+    margin-left: 8px;
+    border-radius: 5px;
+}
+
+
+/* url(../../../assets/icon/refresh.png) no-repeat center/20%; */
+.header-buttonRefresh {
+    margin-left: 10px;
+    background: center/ 6px 6px no-repeat url(../../../assets/icon/refresh.png);
+    width: 40px;
+    height: 36px;
+    background-size: 24px;
+    border: 1px solid rgb(189, 182, 182);
+    cursor: pointer;
+    margin-right: 12px;
+    position: absolute;
+    right: 0;
+    border-radius: 5px;
+}
+
+.allStaff {
+    margin: 12px;
+}
+
+.footer {
+    justify-content: space-between;
+    margin: 0px 12px;
+}
+
+.choosePage{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.directionPage{
+    width: 24px;
+    height: 24px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.footer-buttonFirstPage {
+    background: center/ 6px 6px no-repeat url(../../../assets/icon/btn-firstpage.svg);
+    background-size: cover;
+}
+
+.footer-buttonPrePage {
+    background: center/ 6px 6px no-repeat url(../../../assets/icon/btn-prev-page.svg);
+    background-size: cover;
+}
+
+.footer-buttonNextPage {
+    background: center/ 6px 6px no-repeat url(../../../assets/icon/btn-next-page.svg);
+    background-size: cover;
+}
+
+.footer-buttonLastPage {
+    background: center/ 6px 6px no-repeat url(../../../assets/icon/btn-lastpage.svg);
+    background-size: cover;
+}
+
+table tbody {
+    display: block;
+    max-height: calc(100vh - 300px);
+    overflow-y: scroll;
+  }
+  
+  table thead, table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
